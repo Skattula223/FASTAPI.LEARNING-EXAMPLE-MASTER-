@@ -14,12 +14,12 @@ async def form_text(request: Request, username: str = Form(...), password: str =
     print('password',password)
     
     # return {'text_1':text_1 , 'text_2': text_2}
-    return templates.TemplateResponse('index.html', {'request': request, 'username': username, 'password': password})
+    return templates.TemplateResponse(request, 'index.html', {'username': username, 'password': password})
 
 
 @app.get("/")
 async def main(request: Request):
-    return templates.TemplateResponse('post.html', {'request': request})
+    return templates.TemplateResponse(request, 'post.html')
 
 if __name__ == '__main__':
     import uvicorn

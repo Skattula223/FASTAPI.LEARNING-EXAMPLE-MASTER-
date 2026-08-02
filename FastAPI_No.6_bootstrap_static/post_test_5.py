@@ -18,9 +18,9 @@ async def files(
     print('username', username)
     print('password', password)
     return templates.TemplateResponse(
-        'index.html', 
+        request,
+        'index.html',
         {
-            'request':  request,
             'username': username,
         }
                                         )
@@ -28,7 +28,7 @@ async def files(
 
 @app.get("/")
 async def main(request: Request):
-    return templates.TemplateResponse('signin.html', {'request': request})
+    return templates.TemplateResponse(request, 'signin.html')
 
 
 

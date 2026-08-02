@@ -15,7 +15,7 @@ async def create_file(file:bytes = File(...), fileb: UploadFile = File(...)):
 
 @app.get("/")
 async def main(request: Request):
-    return templates.TemplateResponse('post.html', {'request': request})
+    return templates.TemplateResponse(request, 'post.html')
 
 
 if __name__ == '__main__':

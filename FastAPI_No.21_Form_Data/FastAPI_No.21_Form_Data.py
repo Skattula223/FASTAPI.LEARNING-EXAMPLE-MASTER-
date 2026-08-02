@@ -13,7 +13,7 @@ async def users(username: str = Form(...), password: str = Form(...)):
 
 @app.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse('post.html', {'request': request})
+    return templates.TemplateResponse(request, 'post.html')
 
 
 if __name__ == '__main__':

@@ -14,11 +14,10 @@ async def files(
                     files_list: List[bytes]         = File(...),
                     files_name: List[UploadFile]    = File(...),
                 ):
-    return templates.TemplateResponse("index.html", 
+    return templates.TemplateResponse(request, "index.html",
             {
-                "request":      request,
-                "file_sizes":   [len(file) for file in files_list], 
-                "filenames":    [file.filename for file in files_name],    
+                "file_sizes":   [len(file) for file in files_list],
+                "filenames":    [file.filename for file in files_name],
              })
 
 
@@ -29,9 +28,8 @@ async def create_file(
                         fileb: UploadFile   = File(...), 
                         notes: str          = Form(...),
                       ):
-    return templates.TemplateResponse("index.html", 
+    return templates.TemplateResponse(request, "index.html",
             {
-                "request":               request,
                 "file_size":             len(file),
                 "notes":                 notes,
                 "fileb_content_type":    fileb.content_type,
@@ -40,7 +38,7 @@ async def create_file(
 
 @app.get("/")
 async def main(request: Request):
-    return templates.TemplateResponse('post.html', {'request': request})
+    return templates.TemplateResponse(request, 'post.html')
 
 
 if __name__ == '__main__':
