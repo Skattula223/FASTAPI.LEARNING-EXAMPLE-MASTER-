@@ -20,19 +20,19 @@ async def ii(A: int = 0, B: int = 10, C: int = 20):
 async def iii(A: int = 0, B: int = 10, C: int = 20):
     return 'A+B+C',A+B+C
    
-# bool与类型转换
+# bool
 @app.get("/xxx/{item_id}")
 async def xxx(item_id: str, QQ: str = None, SS: bool = False):
     item = {"item_id": item_id}
     if QQ:
         item.update({"QQ": QQ})
-    if not SS:  # 如果SS是假
+    if not SS:  # SS
         item.update(
             {"item_id": "This is SSSSSSS"}
         )
     return item
 
-#多路径 和 查询参数 和 必填字段
+#    
 @app.get("/user/{user_id}/item/{item_id}")
 async def read_user_item(
     user_id: int, item_id: str, q: str = None, short: bool = False

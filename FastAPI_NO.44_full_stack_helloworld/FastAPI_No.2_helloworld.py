@@ -6,12 +6,12 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-app.add_middleware(         # 添加中间件
-    CORSMiddleware,         # CORS中间件类
-    allow_origins=["*"],  # 允许起源
-    allow_credentials=True, # 允许凭据
-    allow_methods=["*"],    # 允许方法
-    allow_headers=["*"],    # 允许头部
+app.add_middleware(         # 
+    CORSMiddleware,         # CORS
+    allow_origins=["*"],  # 
+    allow_credentials=True, # 
+    allow_methods=["*"],    # 
+    allow_headers=["*"],    # 
 )
 
 
@@ -21,7 +21,7 @@ async def main():
 
 @app.get("/{a}")
 async def regist(a):
-    print('前端数据是：',a)
+    print('',a)
     print(type(a))
     return a
     

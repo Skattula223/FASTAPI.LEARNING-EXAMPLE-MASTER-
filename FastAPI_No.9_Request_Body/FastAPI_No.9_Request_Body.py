@@ -14,7 +14,7 @@ app = FastAPI()
 @app.post("/items/")
 async def create_item(item: Item):
     print(item.dict())
-    return item,'人生没有无意义的经历。'
+    return item,''
 
 @app.put("/items/{item_id}")
 async def create_item2(item_id: int, item: Item, q: str = None):

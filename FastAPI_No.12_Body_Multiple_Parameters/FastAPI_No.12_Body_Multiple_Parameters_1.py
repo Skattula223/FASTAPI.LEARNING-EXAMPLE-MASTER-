@@ -11,7 +11,7 @@ class Item(BaseModel):
     price: float
     tax: float = None
 
-# 混合参数
+# 
 @app.put("/items/{item_id}")
 async def update_item(
     *,

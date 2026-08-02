@@ -1,9 +1,9 @@
-"""yield的演示"""
+"""yield"""
 
 def fun():
     try:
         print ('1')
-        db = 'SessionLocal()' # db也可被赋予变量等
+        db = 'SessionLocal()' # db
         yield db
     finally:
         print ('3')

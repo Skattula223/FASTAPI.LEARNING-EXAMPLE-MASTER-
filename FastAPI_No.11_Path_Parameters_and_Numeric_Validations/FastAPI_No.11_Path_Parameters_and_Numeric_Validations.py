@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/items/{item_id}")
 async def read_items(
-    item_id: int = Path(..., title="The ID of the item to get", ge=50, le=100),#ge 大于等于 gt是大于 le是小于等于
+    item_id: int = Path(..., title="The ID of the item to get", ge=50, le=100),#ge  gt le
     q: str       = Query(None, alias="item-query"),
     size: float  = Query(1, gt=0, lt=10.5)
                     ):

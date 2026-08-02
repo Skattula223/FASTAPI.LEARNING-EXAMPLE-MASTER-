@@ -10,7 +10,7 @@ app = FastAPI()
 #     xxx: UUID
 #     ...
 
-# 额外数据类型
+# 
 # https://fastapi.tiangolo.com/tutorial/extra-data-types/
 @app.put("/items/{item_id}")
 async def read_items(

@@ -21,12 +21,12 @@ items = {
     "baz": {"name": "Baz", "description": None, "price": 50.2, "tax": 10.88, "tags": []},
 }
 
-# response_model_exclude_unset=True 些默认值将不包括在响应中，仅包含实际设置的值。
+# response_model_exclude_unset=True 
 @app.get("/items/{item_id}", response_model=Item, response_model_exclude_unset=True)
 async def read_item(item_id: str):
     return items[item_id]
     
-# response_model_exclude={"tax"} 是排除tax
+# response_model_exclude={"tax"} tax
 @app.get("/items/{item_id}/public", response_model=Item, response_model_exclude={"price"})
 async def read_item_public_data(item_id: str):
     return items[item_id]

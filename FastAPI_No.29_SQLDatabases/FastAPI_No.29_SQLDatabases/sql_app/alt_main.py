@@ -12,12 +12,12 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# 中间件
+# 
 @app.middleware("http")
-async def db_session_middleware(request: Request, call_next): # 数据库会话中间件
+async def db_session_middleware(request: Request, call_next): # 
     response = Response("Internal server error", status_code=500)
     try:
-        request.state.db = SessionLocal() # 本地会话
+        request.state.db = SessionLocal() # 
         response = await call_next(request)
     finally:
         request.state.db.close()

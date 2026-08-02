@@ -27,7 +27,7 @@ items = {
 @app.get(
     "/items/{item_id}/name",
     response_model=Item,
-    response_model_include=["name", "description", 'tax'],  # 官方案例没有tax
+    response_model_include=["name", "description", 'tax'],  # tax
 )
 async def read_item_name(item_id: str):
     return items[item_id]

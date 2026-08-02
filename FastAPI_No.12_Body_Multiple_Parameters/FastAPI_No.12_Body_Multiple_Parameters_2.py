@@ -16,7 +16,7 @@ class User(BaseModel):
     username: str
     full_name: str = None
 
-# body的奇异值
+# body
 @app.put("/items/{item_id}")
 async def update_item(
     *, item_id: int, item: Item, user: User, importance: int = Body(...)

@@ -11,12 +11,12 @@ async def read_items():
 @router.get("/{item_id}")
 async def read_item(item_id: str):
     return {"name": "Fake Specific Item", "item_id": item_id}
-                    # 伪造特定物品
+                    # 
 
 @router.put(
     "/{item_id}",
-    tags=["custom"], # custom 习惯
-    responses={403: {"description": "Operation forbidden"}}, # 禁止操作
+    tags=["custom"], # custom 
+    responses={403: {"description": "Operation forbidden"}}, # 
 )
 async def update_item(item_id: str):
     if item_id != "foo":

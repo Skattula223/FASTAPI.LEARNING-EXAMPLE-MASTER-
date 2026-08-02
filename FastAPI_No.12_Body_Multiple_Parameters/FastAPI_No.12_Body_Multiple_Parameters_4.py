@@ -16,7 +16,7 @@ class User(BaseModel):
     username: str
     full_name: str = None
 
-# 多主体参数和查询
+# 
 @app.put("/items/{item_id}")
 async def update_item(
     *,

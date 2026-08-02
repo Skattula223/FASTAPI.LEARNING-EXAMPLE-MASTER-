@@ -14,7 +14,7 @@ async def read_item(item_id: str):
     pass
     return {"item": items[item_id]}
 
-# 添加自定义标题
+# 
 @app.get("/items-header/{item_id}")
 async def read_item_header(item_id: str):
     if item_id not in items:
@@ -22,7 +22,7 @@ async def read_item_header(item_id: str):
             status_code=404,
             detail="Item not found",
             headers={"X-Error": "There goes my error"}, 
-            # X-Error 自定义。例如，对于某些类型的安全性。OAuth 2.0和某些安全实用程序在内部需要/使用此功能。
+            # X-Error OAuth 2.0/
         )
     return {"item": items[item_id]}
 

@@ -20,7 +20,7 @@ app = FastAPI()
 @app.put("/items/{id}")
 def update_item(id: str, item: Item):
     json_compatible_item_data = jsonable_encoder(item)
-    # jsonable_encoder实际上由FastAPI在内部用于转换数据。但这在许多其他情况下很有用。
+    # jsonable_encoderFastAPI
     fake_db[id] = json_compatible_item_data
     print(json_compatible_item_data)
     print(type(json_compatible_item_data))

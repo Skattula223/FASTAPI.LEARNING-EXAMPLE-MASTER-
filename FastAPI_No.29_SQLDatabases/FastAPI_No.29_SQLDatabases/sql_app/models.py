@@ -1,8 +1,8 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from database import Base # 已声明的数据库
-"""row：行    column：列"""
+from database import Base # 
+"""row    column"""
 
 class User(Base): 
     __tablename__ = "users"
@@ -13,7 +13,7 @@ class User(Base):
     is_active = Column(Boolean, default=True)
 
     items = relationship("Item", back_populates="owner") 
-          # 关系
+          # 
 
 
 class Item(Base):

@@ -16,12 +16,12 @@ class Item(BaseModel):
     description: str = None
     price: float
     tax: float = None
-    tags: Set[str] = set()  # 集合 创建一个空集合必须用 set() 而不是 { }
-    image: Image = None # 使用子模型作为类型
-    images: List[Image] = None # 带有子模型列表的属性
+    tags: Set[str] = set()  #   set()  { }
+    image: Image = None # 
+    images: List[Image] = None # 
 
 
-# 到处都有编辑器支持
+# 
 @app.put("/items/{item_id}")
 async def update_item(*, item_id: int, item: Item):
     results = {"item_id": item_id, "item": item}

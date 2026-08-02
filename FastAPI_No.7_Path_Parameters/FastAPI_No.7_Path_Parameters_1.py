@@ -14,7 +14,7 @@ async def read_item(item_id: str):
 
 @app.get("/")
 async def main():
-    return {"message": "Hello，FastAPI"}
+    return {"message": "HelloFastAPI"}
     
 
 

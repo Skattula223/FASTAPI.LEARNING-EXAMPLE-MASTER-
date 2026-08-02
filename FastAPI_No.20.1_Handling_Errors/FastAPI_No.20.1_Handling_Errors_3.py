@@ -7,13 +7,13 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 app = FastAPI()
 
-# 覆盖默认的异常处理程序
-@app.exception_handler(StarletteHTTPException)  # 重写HTTPException错误处理程序
+# 
+@app.exception_handler(StarletteHTTPException)  # HTTPException
 async def http_exception_handler(request, exc):
     return PlainTextResponse(str(exc.detail), status_code=exc.status_code)
 
 
-@app.exception_handler(RequestValidationError)  # 导入超越请求验证异常
+@app.exception_handler(RequestValidationError)  # 
 async def validation_exception_handler(request, exc):
     return PlainTextResponse(str(exc), status_code=400)
 

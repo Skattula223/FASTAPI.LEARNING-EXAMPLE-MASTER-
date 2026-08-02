@@ -17,12 +17,12 @@ async def update_item(
     *,
     item_id: int,
     item: Item = Body(...,
-        example={   # example是Body里没有的字段；不会添加任何验证，而只会添加注释；不是example也不行
+        example={   # exampleBodyexample
             "name": "Foo",
             "description": "A very nice Item",
             "price": 0,
             "toooo": 3.2,
-            # "toooooooooo": 3.2, # 超过的键值对，会全部显示原来的Item
+            # "toooooooooo": 3.2, # Item
         },
     )
 ):

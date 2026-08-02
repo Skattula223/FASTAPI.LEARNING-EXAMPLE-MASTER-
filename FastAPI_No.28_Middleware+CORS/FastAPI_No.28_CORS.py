@@ -20,12 +20,12 @@ app.mount('/static', StaticFiles(directory='static'), name='static')
     
 # ]
 
-# app.add_middleware(         # 添加中间件
-#     CORSMiddleware,         # CORS中间件类
-#     allow_origins=origins,  # allow_origins=['*'], # 允许起源所有
-#     allow_credentials=True, # 允许凭据
-#     allow_methods=["*"],    # 允许方法
-#     allow_headers=["*"],    # 允许头部
+# app.add_middleware(         # 
+#     CORSMiddleware,         # CORS
+#     allow_origins=origins,  # allow_origins=['*'], # 
+#     allow_credentials=True, # 
+#     allow_methods=["*"],    # 
+#     allow_headers=["*"],    # 
 # )
 
 @app.get("/")

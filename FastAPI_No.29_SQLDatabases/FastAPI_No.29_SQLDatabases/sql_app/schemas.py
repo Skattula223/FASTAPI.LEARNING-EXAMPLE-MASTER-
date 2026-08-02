@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class ItemBase(BaseModel):
     title: str
-    description: str = None
+    description: Optional[str] = None
 
 
 class ItemCreate(ItemBase):
@@ -16,8 +16,7 @@ class Item(ItemBase):
     id: int
     owner_id: int
 
-    class Config:
-        orm_mode = True # 用于为Pydantic提供配置
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UserBase(BaseModel):
@@ -33,5 +32,4 @@ class User(UserBase):
     is_active: bool
     items: List[Item] = []
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

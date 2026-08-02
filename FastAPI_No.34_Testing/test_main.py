@@ -11,7 +11,7 @@ def test_read_main():
     assert response.status_code == 200
     assert response.json() == {"msg": "Hello World"}
 
-# 等价于
+# 
 # if not expression:
 #     raise AssertionError
 

@@ -5,9 +5,9 @@ from fastapi import FastAPI
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-# 安装自定义异常处理程序
-# 自定义异常UnicornException
-class UnicornException(Exception):  # Exception 常规错误的基类
+# 
+# UnicornException
+class UnicornException(Exception):  # Exception 
     def __init__(self, name: str):
         self.name = name
 

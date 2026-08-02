@@ -6,16 +6,16 @@ from routers import users,items
 app = FastAPI()
 
 async def get_token_header(x_token: str = Header(...)):
-    if x_token != "fake-super-secret-token": # 假超密令牌
-        raise HTTPException(status_code=400, detail="X-Token header invalid") # X令牌头无效
+    if x_token != "fake-super-secret-token": # 
+        raise HTTPException(status_code=400, detail="X-Token header invalid") # X
 
 
 app.include_router(users.router)
 app.include_router(items.router,
-    # 前缀
+    # 
     prefix="/items",
     tags=["items"],
-    # 依赖关系
+    # 
     dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )

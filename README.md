@@ -1,7 +1,7 @@
-# [视频教学地址](https://space.bilibili.com/396891097)
-## 中文学习教程
-- 1、本教程每一个案例都可以独立跑，前提是安装好依赖包。
-- 2、本教程并未按照官方教程顺序，而是按照实际使用顺序编排。
+# [](https://space.bilibili.com/396891097)
+## 
+- 1
+- 2
 
 # [Video Teaching Address](https://space.bilibili.com/396891097)
 ## FastAPI Learning Example

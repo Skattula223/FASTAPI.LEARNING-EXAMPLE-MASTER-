@@ -11,7 +11,7 @@ class Item(BaseModel):
     price: float
     tax: float = None
 
-#嵌入一个单body的参数
+#body
 @app.put("/items/{item_id}")
 async def update_item(*, item_id: int, item: Item = Body(..., embed=True)):
     results = {"item_id": item_id, "item": item}
